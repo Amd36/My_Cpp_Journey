@@ -10,7 +10,10 @@ for file in files:
     if file.endswith(".exe"):
         exe_files.append(file)
 
-for file in exe_files:
-    os.remove(file)
-
-print("All exe files successfully cleared!")
+if len(file):
+    for file in exe_files:
+        print("Removing file :", file)
+        os.remove(file)
+    print("\nAll exe files successfully cleared!")
+else:
+    print("No exe file found!")
